@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const LeadFormSection = () => {
   const [name, setName] = useState("");
@@ -15,16 +16,31 @@ const LeadFormSection = () => {
     if (!name.trim() || !email.trim()) return;
 
     setLoading(true);
-    // TODO: Connect to Supabase
-    await new Promise((r) => setTimeout(r, 1000));
-    toast({
-      title: "נרשמת בהצלחה! 🎉",
-      description: "נשלח לך מייל עם פרטי הוובינר בקרוב.",
-    });
-    setName("");
-    setEmail("");
-    setLinkedin("");
-    setLoading(false);
+    try {
+      const { error } = await supabase.from("webinar_registrants").insert({
+        full_name: name.trim(),
+        work_email: email.trim(),
+        linkedin_url: linkedin.trim() || null,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "נרשמת בהצלחה! 🎉",
+        description: "נשלח לך מייל עם פרטי הוובינר בקרוב.",
+      });
+      setName("");
+      setEmail("");
+      setLinkedin("");
+    } catch (err: any) {
+      toast({
+        title: "שגיאה",
+        description: "משהו השתבש, נסו שוב.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
