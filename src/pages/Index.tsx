@@ -3,7 +3,6 @@ import MonsterMetricSection from "@/components/MonsterMetricSection";
 import CalculatorSection from "@/components/CalculatorSection";
 import ScienceSection from "@/components/ScienceSection";
 import SolutionSection from "@/components/SolutionSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import OfferSection from "@/components/OfferSection";
 import LeadFormSection from "@/components/LeadFormSection";
 import FAQSection from "@/components/FAQSection";
@@ -19,7 +18,6 @@ const Index = () => {
         <CalculatorSection />
         <ScienceSection />
         <SolutionSection />
-        <TestimonialsSection />
         <OfferSection />
         <LeadFormSection />
         <FAQSection />
