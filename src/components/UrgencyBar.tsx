@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Clock, Users } from "lucide-react";
+import { Clock } from "lucide-react";
 
 const WEBINAR_DATE = new Date("2026-04-12T18:00:00+03:00");
-const REMAINING_SPOTS = 4;
-const TOTAL_SPOTS = 10;
 
 const UrgencyBar = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -45,13 +43,6 @@ const UrgencyBar = () => {
           <span>הוובינר מתחיל בעוד:</span>
           <span className="font-mono text-base tracking-widest bg-black/20 px-2 py-0.5 rounded">
             {pad(timeLeft.days)}:{pad(timeLeft.hours)}:{pad(timeLeft.minutes)}:{pad(timeLeft.seconds)}
-          </span>
-        </div>
-        <span className="hidden md:block opacity-40">|</span>
-        <div className="flex items-center gap-1.5">
-          <Users size={14} />
-          <span>
-            נותרו <strong className="underline">{REMAINING_SPOTS}</strong> מתוך {TOTAL_SPOTS} לקוחות החודש
           </span>
         </div>
         <motion.button
