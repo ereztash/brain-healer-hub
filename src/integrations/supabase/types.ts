@@ -14,7 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      webinar_registrants: {
+        Row: {
+          created_at: string
+          full_name: string
+          id: string
+          linkedin_url: string | null
+          work_email: string
+        }
+        Insert: {
+          created_at?: string
+          full_name: string
+          id?: string
+          linkedin_url?: string | null
+          work_email: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string
+          id?: string
+          linkedin_url?: string | null
+          work_email?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
