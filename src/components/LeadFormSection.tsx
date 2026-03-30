@@ -57,7 +57,7 @@ const LeadFormSection = () => {
             <span className="text-gradient-danger">מקומכם האחרון</span>
           </h2>
           <p className="text-muted-foreground text-sm mt-2">
-            נותרו 4 מקומות בלבד — ההרשמה לוקחת דקה
+            נותרו 4 לקוחות בלבד שאני יכול ללוות החודש — ההרשמה לוקחת דקה
           </p>
         </motion.div>
 

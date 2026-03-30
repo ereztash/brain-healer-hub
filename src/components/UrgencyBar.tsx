@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Clock, Users } from "lucide-react";
 
-const WEBINAR_DATE = new Date("2026-04-20T18:00:00+03:00");
+const WEBINAR_DATE = new Date("2026-04-12T18:00:00+03:00");
 const REMAINING_SPOTS = 4;
 const TOTAL_SPOTS = 10;
 
@@ -51,7 +51,7 @@ const UrgencyBar = () => {
         <div className="flex items-center gap-1.5">
           <Users size={14} />
           <span>
-            נותרו <strong className="underline">{REMAINING_SPOTS}</strong> מתוך {TOTAL_SPOTS} מקומות
+            נותרו <strong className="underline">{REMAINING_SPOTS}</strong> מתוך {TOTAL_SPOTS} לקוחות החודש
           </span>
         </div>
         <motion.button

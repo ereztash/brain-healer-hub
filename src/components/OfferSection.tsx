@@ -28,7 +28,7 @@ const OfferSection = () => {
             <div className="flex items-center justify-center gap-2">
               <AlertTriangle size={16} className="text-danger-foreground" />
               <span className="text-danger-foreground font-bold text-sm">
-                נותרו 4 מקומות בלבד מתוך 10 החודש
+                נותרו 4 לקוחות בלבד שאני יכול ללוות החודש
               </span>
             </div>
           </div>
