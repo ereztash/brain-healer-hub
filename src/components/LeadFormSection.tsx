@@ -31,10 +31,13 @@ const LeadFormSection = () => {
       });
       setName("");
       setEmail("");
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const isNetworkError = err instanceof TypeError;
       toast({
         title: "שגיאה",
-        description: "משהו השתבש, נסו שוב.",
+        description: isNetworkError
+          ? "בעיית חיבור לאינטרנט, נסו שוב."
+          : "משהו השתבש, נסו שוב.",
         variant: "destructive",
       });
     } finally {
@@ -53,8 +56,8 @@ const LeadFormSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl md:text-3xl font-black text-foreground">
-            הבטיחו את{" "}
-            <span className="text-gradient-danger">מקומכם האחרון</span>
+            הבטיחו את{""}{
+            }<span className="text-gradient-danger">מקומכם האחרון</span>
           </h2>
           <p className="text-muted-foreground text-sm mt-2">
             ההרשמה חינמית ולוקחת דקה
