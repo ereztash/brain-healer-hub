@@ -54,7 +54,7 @@ const LeadFormSection = () => {
         >
           <h2 className="text-2xl md:text-3xl font-black text-foreground">
             הבטיחו את{" "}
-            <span className="text-gradient-danger">מקומכם האחרון</span>
+            <span className="text-gradient-danger">מקומכם</span>, מספר המקומות מוגבל
           </h2>
           <p className="text-muted-foreground text-sm mt-2">
             ההרשמה חינמית ולוקחת דקה
